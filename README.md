@@ -1,47 +1,51 @@
-Scala Chisel Learning Journey
-=======================
+
+# Scala Chisel Learning Journey
+
 
 [![Join the chat at https://gitter.im/merledu/scala-chisel-learning-journey](https://badges.gitter.im/merledu/scala-chisel-learning-journey.svg)](https://gitter.im/merledu/scala-chisel-learning-journey?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+Welcome to my Scala Chisel learning journey repository. This repository is dedicated to my functional programming assignments and experiments with Scala and Chisel.
 
-Start by setting up the working enviroment
+## Dependencies
 
-### Dependencies
-
-#### JDK 8 or newer
+### JDK 8 or newer
+To run Scala and Chisel, you need JDK 8 or newer. You can install OpenJDK with the following commands:
 
 ```bash
 sudo apt-get install openjdk-11-jdk
 sudo apt-get install openjdk-11-jre
 ```
-#### SBT 
 
-SBT is the most common built tool in the Scala community. You can download it [here](https://www.scala-sbt.org/download.html).  
+### SBT
+SBT is the most common build tool in the Scala community. You can download it [here](https://www.scala-sbt.org/download.html).
 
-#### VERILATOR
+### VERILATOR
+Verilator is a Verilog simulator that you can install with the following command:
+
 ```bash
 sudo apt-get install verilator
 ```
 
-### How to get started
+## How to Get Started
 
-Fork this repository on your own individual profiles. After forking clone the repository and run:
+1. **Fork this repository**: Fork this repository to your own individual profile.
+2. **Clone the repository**: Clone the forked repository to your local machine.
+3. **Run tests**: Navigate to the repository directory and run:
 
-```sh
-sbt test
-```
+   ```sh
+   sbt test
+   ```
 
-You should see a whole bunch of output that ends with something like the following lines
-```
-[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
-[info] All tests passed.
-[success] Total time: 5 s, completed Dec 16, 2020 12:18:44 PM
-```
-If you see the above then...
+   You should see a whole bunch of output that ends with something like the following lines:
 
-### It worked!
+   ```
+   [info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
+   [info] All tests passed.
+   [success] Total time: 5 s, completed Dec 16, 2020 12:18:44 PM
+   ```
 
-You are ready to go. Next step is to go inside the `docs/` folder where you will find the labs to perform.
+   If you see the above, then...
 
-### For quick debugging
-If you quickly want to see what verilog is being generated, go to this link  https://bit.ly/3u3zr0e and write Chisel here.
+## It Worked!
+
+You are ready to go. The next step is to go inside the `docs/` folder where you will find the labs to perform.
