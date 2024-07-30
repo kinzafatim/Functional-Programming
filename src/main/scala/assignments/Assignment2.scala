@@ -31,5 +31,28 @@ object ex1 {
 
         val list1 = List(4, 6, 9, 4, 5, 6)
         println(s"Euclidean norm: ${ex3(list1)}")
-    }
+
+    // ex
+        println("")
+        def apply[T](list: List[T]): Unit = {
+            for (i <- list) {
+                println(i)
+                }
+}
+        val myList = List(1, 2, 3, 4, 5)
+        apply(myList)
+
+
+    // ex
+    def addString[T, U](a: T, b: U): String = {
+        (a.toString, b.toString) match {
+        case (strA, strB) => strA + strB
+        case _ => "Error!! Error!! Error!! failed"
+        }
+}
+    val A = "22SP-032-CS"
+    val B = "hello"
+    println(addString(A, B))
+
+}
 }
