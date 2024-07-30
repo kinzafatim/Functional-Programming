@@ -1,5 +1,6 @@
 import scala.::
 import scala.util.Random
+
 object Exercise1 {
     def main(args: Array[String]): Unit = {
         //val ARRAY = Array(0, 1, 2, 3, 4, 5)
@@ -13,6 +14,56 @@ object Exercise1 {
         println("\n")
     }
 }
+import scala.collection.mutable.Set
+import scala.collection.mutable.Map
+object Exercise2{
+  def main(args: Array[String]): Unit = {
+    val mutableSet = Set(1, 2, 3)
+    println("Initial Set: " + mutableSet)
+    mutableSet += 4
+    println("After adding 4: " + mutableSet)
+
+    mutableSet -= 2
+    println("After removing 2: " + mutableSet)
+
+    println("Contains 3: " + mutableSet.contains(3)) // check if it conatains 3 or not
+    println("Contains 5: " + mutableSet.contains(5))
+    println("\n")
+    val mutableMap = Map("one" -> 1, "two" -> 2) // key -> value
+    println("Initial Map: " + mutableMap)
+
+    mutableMap += ("three" -> 3)
+    println("After adding (three): " + mutableMap)
+
+    mutableMap -= "two"
+    println("After removing (two): " + mutableMap)
+
+    mutableMap("one") = 11
+    println("After updating (one): " + mutableMap)
+
+    println("Value for key 'one': " + mutableMap("one"))
+    println("Value for key 'three': " + mutableMap("three"))
+    println("\n")
+
+  }
+}
+
+object Exercise3{
+  def greet(name: Option[String]): String = {
+    name match {
+      case Some(n) => ("Hello, " + n + "!")
+      case None => ("Hello, guest!")
+    }
+  }
+  def main(args: Array[String]): Unit = {
+    val someName: Option[String] = Some("Kinza")
+    val noName: Option[String] = None
+
+    println(greet(someName))
+    //println(greet(noName))
+  }
+}
+
 object Exercise4 {
   def main(args: Array[String]): Unit = {
     val numbers = Array(1, 2, 3, 4, 5)
@@ -28,6 +79,8 @@ object Exercise4 {
   }
 }
 
+
+
 object Task1 {
   def main(args: Array[String]): Unit = {
     val randomInt = Seq.fill(15)(50 + Random.nextInt(450))
@@ -38,7 +91,6 @@ object Task1 {
     println("Random Integers: " + randomInt)
     println("Prime Map: " + primeMap)
   }
-
   def isPrime(n: Int): Boolean = {
     if (n <= 1) false
     else if (n == 2) true
@@ -58,18 +110,19 @@ object Task2 {
       else 
       helper(current + 1, end, acc :+ current.toChar)
     }
-    helper(start, 122, List.empty[Char]) // 122 is the ASCII value for 'z'
+    helper(start, 122, List.empty[Char]) // 122 is the ASCII value= z
   }
 }
 object Task3 {
-  def elementWiseSum(array1: Array[Double], array2: Array[Double]): Array[Double] = {
-    (array1 zip array2).map { case (a, b) => a + b }
+  def eSum(array1: Array[Double], array2: Array[Double]): Array[Double] = {
+    (array1 zip array2).map { 
+      case (a, b) => a + b 
+    }
   }
-
   def main(args: Array[String]): Unit = {
     val array1 = Array(1.0, 2.0, 3.0)
     val array2 = Array(4.0, 5.0, 6.0)
-    val result = elementWiseSum(array1, array2)
+    val result = eSum(array1, array2)
     println(s"Element-wise Sum: ${result.mkString(", ")}")
   }
 }
