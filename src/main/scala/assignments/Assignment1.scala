@@ -39,7 +39,7 @@ object Exercise2{
     println("After removing (two): " + mutableMap)
 
     mutableMap("one") = 11
-    println("After updating (one): " + mutableMap)
+    println("Updated value off (one): " + mutableMap)
 
     println("Value for key 'one': " + mutableMap("one"))
     println("Value for key 'three': " + mutableMap("three"))
@@ -51,8 +51,8 @@ object Exercise2{
 object Exercise3{
   def greet(name: Option[String]): String = {
     name match {
-      case Some(n) => ("Hello, " + n + "!")
-      case None => ("Hello, guest!")
+      case Some(n) => ("Hello, " + n + ". How you doin'")
+      case None => ("Hello, Stranger!")
     }
   }
   def main(args: Array[String]): Unit = {
@@ -69,13 +69,13 @@ object Exercise4 {
     val numbers = Array(1, 2, 3, 4, 5)
     // Filter
     val even = numbers.filter(_ % 2 == 0)
-    println("Even numbers: " + even.mkString(", "))
+    println("Even no: " + even.mkString(", "))
     // Map
     val doubled = numbers.map(_ * 2)
-    println("Doubled numbers: " + doubled.mkString(", "))
+    println("Doubled no: " + doubled.mkString(", "))
     // Reduce
     val sum = numbers.reduce(_ + _)
-    println("Sum of numbers: " + sum)
+    println("Sum : " + sum)
   }
 }
 
@@ -89,7 +89,7 @@ object Task1 {
     val primeMap = sortedPrimes.map(x => randomInt.indexOf(x) -> x).toMap
 
     println("Random Integers: " + randomInt)
-    println("Prime Map: " + primeMap)
+    println("Map: " + primeMap)
   }
   def isPrime(n: Int): Boolean = {
     if (n <= 1) false
@@ -123,9 +123,43 @@ object Task3 {
     val array1 = Array(1.0, 2.0, 3.0)
     val array2 = Array(4.0, 5.0, 6.0)
     val result = eSum(array1, array2)
-    println(s"Element-wise Sum: ${result.mkString(", ")}")
+    println(s"Sum: ${result.mkString(", ")}")
   }
 }
 
+object Task4 {
+  def evenR(arr: Array[Int]): Int = {
+    def helper(index: Int, count: Int): Int = {
+      if (index >= arr.length) 
+      count
+      else if 
+      (arr(index) % 2 == 0) helper(index + 1, count + 1)
+      else 
+      helper(index + 1, count)
+    }
+    helper(0, 0)
+  }
 
+  def isEven(arr: Array[Int]): Int = {
+    arr.count(_ % 2 == 0)
+  }
+  def main(args: Array[String]): Unit = {
+    val largeArray = Array.fill(100)(Random.nextInt(100))
+    println(s"Array:[ ${largeArray.mkString(", ")} ]")
+    val ans = evenR(largeArray)
+    println(s"No of even values recursive function: $ans")
+    val answer = isEven(largeArray)
+    println(s"No of even values count higher-order method: $answer")
+  }
+}
+
+// object Task5 {
+//   def buildMap[A, B](data: Seq[A], f: A => B): Map[B, A]{
+//   }
+
+//   def func(x: Int): Boolean = x % 2 == 0 // Check if the number is even
+
+//   val lst = Seq(1, 2, 3, 4, 5)
+//   println(buildMap(lst, func)) // Output the result of buildMap
+// }
 
