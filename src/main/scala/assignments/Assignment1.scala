@@ -153,13 +153,16 @@ object Task4 {
   }
 }
 
+// import scala.collection.immutable.Map
+
 // object Task5 {
-//   def buildMap[A, B](data: Seq[A], f: A => B): Map[B, A]{
+//   def buildMap[A, B](data: Seq[A], f: A => B): Map[A, B] = {
+//     data.map(x => x -> f(x)).toMap
 //   }
 
-//   def func(x: Int): Boolean = x % 2 == 0 // Check if the number is even
+//   def func(x: Int): Boolean = x % 2 == 0 // number is even or nott
 
 //   val lst = Seq(1, 2, 3, 4, 5)
-//   println(buildMap(lst, func)) // Output the result of buildMap
+//   println(buildMap(lst, func))
 // }
 
