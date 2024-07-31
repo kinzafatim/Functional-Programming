@@ -32,7 +32,7 @@ object ex1 {
         val list1 = List(4, 6, 9, 4, 5, 6)
         println(s"Euclidean norm: ${ex3(list1)}")
 
-    // ex
+    // ex4
         println("")
         def apply[T](list: List[T]): Unit = {
             for (i <- list) {
@@ -43,7 +43,7 @@ object ex1 {
         apply(myList)
 
 
-    // ex
+    // ex5
     def addString[T, U](a: T, b: U): String = {
         (a.toString, b.toString) match {
         case (strA, strB) => strA + strB
